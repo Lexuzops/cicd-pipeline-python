@@ -1,4 +1,3 @@
-# app/app.py
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
 
@@ -7,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """Funcion principal que maneja la lógica de la calculadora"""
     resultado = None
     if request.method == "POST":
         try:
